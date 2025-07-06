@@ -18,6 +18,7 @@ This is a simple and interactive e-learning platform built using **HTML**, **CSS
 
 ## 📂 Project Structure
 
+```
 e-learning-platform/
 ├── index.html # Student login form
 ├── courses.html # List of available courses
@@ -29,7 +30,7 @@ e-learning-platform/
 │ └── script.js # Form handling, logout, progress logic
 └── README.md # Project documentation
 
-
+```
 ---
 
 ## 💻 How to Run
