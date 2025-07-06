@@ -20,15 +20,15 @@ This is a simple and interactive e-learning platform built using **HTML**, **CSS
 
 ```
 e-learning-platform/
-  ├── index.html # Student login form
-  ├── courses.html # List of available courses
-  ├── course.html # Video player and   completion button
-  ├── progress.html # Student progress tracker
-  ├── css/
-  │ └── style.css # Custom styles and  responsive design
-  ├── js/
-  │ └── script.js # Form handling, logout, progress logic
-  └── README.md # Project documentation
+├── index.html       # Student login form
+├── courses.html     # List of available courses
+├── course.html      # Video player and   completion button
+├── progress.html    # Student progress tracker
+├── css/
+│    └── style.css   # Custom styles and  responsive design
+├── js/
+│    └── script.js   # Form handling, logout, progress logic
+└── README.md        # Project documentation
 
 ```
 ---
