@@ -42,22 +42,24 @@ e-learning-platform/
 Open index.html in your browser.
 
 Enter student details and begin learning!
+---
+## 🔧 Technologies Used
 
-🔧 Technologies Used
 HTML5
 
 CSS3 (with transitions/animations)
 
 JavaScript (vanilla)
+---
+## 📌 Notes
 
-📌 Notes
-Progress is stored in localStorage, so it resets if browser storage is cleared.
+📍Progress is stored in localStorage, so it resets if browser storage is cleared.
 
-Designed as a static frontend project — no backend or database.
-
-📸 Screenshots
+📍Designed as a static frontend project — no backend or database.
+---
+## 📸 Screenshots
 You can add screenshots here of the home page, course view, and progress page.
-
-📄 License
+---
+## 📄 License
 This project is licensed under the MIT License.
 
