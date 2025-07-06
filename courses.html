@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Courses</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <h1 class="fade-in">📘 E-Learning Platform</h1>
+    <nav class="slide-down">
+      <a href="courses.html">Courses</a>
+      <a href="progress.html">Progress</a>
+    </nav>
+<button onclick="logout()" class="logout-btn">🔓 Logout</button>
+<script>
+  function logout() {
+    localStorage.clear();
+    window.location.href = "index.html";
+  }
+</script>
+
+  </header>
+
+  <main>
+    <h2>Welcome, <span id="student-name"></span>!</h2>
+    <section id="courses" class="course-list slide-up">
+      <div class="course-card fade-in">
+        <h3>HTML Basics</h3>
+        <p>Learn the structure of the web.</p>
+        <a href="course.html?course=html">Start Learning</a>
+      </div>
+      <div class="course-card fade-in">
+        <h3>CSS Styling</h3>
+        <p>Make websites beautiful with CSS.</p>
+        <a href="course.html?course=css">Start Learning</a>
+      </div>
+      <div class="course-card fade-in">
+        <h3>JavaScript Fundamentals</h3>
+        <p>Bring interactivity with JS.</p>
+        <a href="course.html?course=js">Start Learning</a>
+      </div>
+      <div class="course-card fade-in">
+        <h3>React.js for Beginners</h3>
+        <p>Learn how to build UI using React.js.</p>
+        <a href="course.html?course=react">Start Learning</a>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const student = JSON.parse(localStorage.getItem("student"));
+    if (student && student.name) {
+      document.getElementById("student-name").textContent = student.name;
+    } else {
+      window.location.href = "index.html";
+    }
+  </script>
+<script src="js/script.js"></script><script>loadStudentName();</script>
+</body>
+</html>

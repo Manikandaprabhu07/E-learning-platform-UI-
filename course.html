@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Course Details</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <h1 class="fade-in">📘 E-Learning Platform</h1>
+    <nav class="fade-in">
+      <a href="courses.html">Courses</a>
+      <a href="progress.html">Progress</a>
+    </nav>
+<button onclick="logout()" class="logout-btn">🔓 Logout</button>
+<script>
+  function logout() {
+    localStorage.clear();
+    window.location.href = "index.html";
+  }
+</script>
+
+  </header>
+
+  <main class="fade-in">
+    <h2 id="course-title">Course Title</h2>
+    <p>👤 Student: <span id="student-name"></span></p>
+    <div class="video-wrapper" id="video-container"></div>
+    <div style="text-align: center;">
+      <button onclick="markProgress()">✅ Mark as Complete</button>
+    </div>
+  </main>
+
+  <script>
+    const student = JSON.parse(localStorage.getItem("student"));
+    if (student && student.name) {
+      document.getElementById("student-name").textContent = student.name;
+    } else {
+      window.location.href = "index.html";
+    }
+
+    const courseVideos = {
+      html: { title: "HTML Basics", video: "https://www.youtube.com/embed/UB1O30fR-EE" },
+      css: { title: "CSS Styling", video: "https://www.youtube.com/embed/yfoY53QXEnI" },
+      js: { title: "JavaScript Fundamentals", video: "https://www.youtube.com/embed/PkZNo7MFNFg" },
+      react: { title: "React.js for Beginners", video: "https://www.youtube.com/embed/bMknfKXIFA8" }
+    };
+
+    function getCourseParam() {
+      const urlParams = new URLSearchParams(window.location.search);
+      return urlParams.get('course');
+    }
+
+    function loadCourse() {
+      const courseKey = getCourseParam();
+      const course = courseVideos[courseKey];
+      if (course) {
+        document.getElementById("course-title").innerText = `Course: ${course.title}`;
+        document.getElementById("video-container").innerHTML = `
+          <iframe src="${course.video}" frameborder="0" allowfullscreen title="${course.title}"></iframe>
+        `;
+      } else {
+        document.getElementById("course-title").innerText = "Course Not Found";
+      }
+    }
+
+    function markProgress() {
+      const courseKey = getCourseParam();
+      const course = courseVideos[courseKey];
+      if (!course) return;
+      let progress = JSON.parse(localStorage.getItem("progress")) || [];
+      if (!progress.includes(course.title)) {
+        progress.push(course.title);
+        localStorage.setItem("progress", JSON.stringify(progress));
+        alert("✅ Marked as completed!");
+      } else {
+        alert("Already completed.");
+      }
+    }
+
+    window.onload = loadCourse;
+  </script>
+<script src="js/script.js"></script><script>loadStudentName(); loadCourse();</script>
+</body>
+</html>

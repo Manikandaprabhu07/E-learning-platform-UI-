@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Student Login</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header>
+    <h1>🎓 Welcome to E-Learning Platform</h1>
+  </header>
+
+  <main class="form-container fade-in">
+    <h2>Enter Your Details</h2>
+    <form id="student-form">
+      <input type="text" placeholder="Full Name" id="name" required /><br />
+      <input type="tel" placeholder="Phone Number" id="phone" required /><br />
+      <input type="email" placeholder="Email Address" id="email" required /><br />
+      <button type="submit">Submit & Start Learning</button>
+    </form>
+  </main>
+
+  <script>
+    document.getElementById("student-form").addEventListener("submit", function (e) {
+      e.preventDefault();
+      const student = {
+        name: document.getElementById("name").value,
+        phone: document.getElementById("phone").value,
+        email: document.getElementById("email").value
+      };
+      localStorage.setItem("student", JSON.stringify(student));
+      window.location.href = "courses.html";
+    });
+  </script>
+<script src="js/script.js"></script><script>document.getElementById("student-form").addEventListener("submit", saveStudentData);</script>
+</body>
+</html>
