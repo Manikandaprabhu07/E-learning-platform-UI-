@@ -64,6 +64,8 @@ JavaScript (vanilla)
 ![Image](https://github.com/user-attachments/assets/52df38c6-c532-403e-9e31-0858e084b4fe)
 ![Image](https://github.com/user-attachments/assets/f7632b1f-4047-40f1-a193-ba4cc9f111d0)
 
+## View webpage
+🔗https://manikandaprabhu07.github.io/E-learning-platform-UI-/
 ## 📄 License
 This project is licensed under the MIT License.
 
